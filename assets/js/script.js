@@ -60,27 +60,9 @@ function init() {
             // todoItemList.append(generateNewTodoItem(newValue));
             todoItemList.append("" +
                 "<li>" +
-                "<span class=\"item-delete\">[Delete]</span>" +
+                "<span class=\"item-delete\"><i class=\"fa fa-trash-o\"></i></span>" +
                 "<span class=\"item-value\">" + newValue + "</span>" +
                 "</li>");
-        }
-
-        function generateNewTodoItem(value) {
-
-            //  Create new item element using vanilla js
-            let newTodoItem = document.createElement("li");
-            let itemDelete = document.createElement("span");
-            itemDelete.classList.add("item-delete");
-            itemDelete.textContent = "[Delete]";
-
-            let itemValue = document.createElement("span");
-            itemValue.classList.add("item-value");
-            itemValue.textContent = value;
-
-            newTodoItem.appendChild(itemDelete);
-            newTodoItem.appendChild(itemValue);
-
-            return newTodoItem;
         }
 
     })
