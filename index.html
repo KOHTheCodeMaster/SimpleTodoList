@@ -25,14 +25,18 @@
 <main id="main-container" class="container w-50">
 
     <!--  Header  -->
-    <header class="d-flex justify-content-between">
+    <header class="d-flex justify-content-between bg-primary">
         <h1 class="display-3">To-Do List</h1>
-        <button>+</button>
+        <button id="btn-toggle-input"><i class="fa fa-angle-down"></i></button>
     </header>
 
     <div id="todo-body">
 
-        <!--  Unable to remove margin from label attached with the input element  -->
+        <!--
+                &lt;!&ndash;  Unable to remove margin from label attached with the input element  &ndash;&gt;
+                &lt;!&ndash;  Unwanted margin gap left when input fadesout but label remains behind  &ndash;&gt;
+                <label for="new-todo-item"></label><input id="new-todo-item" type="text" placeholder="Enter New To-Do...">
+        -->
         <label for="new-todo-item"></label><input id="new-todo-item" type="text" placeholder="Enter New To-Do...">
 
         <!--        <hr id="header-separator" class="bg-primary">-->
@@ -41,11 +45,43 @@
         <ul>
             <li>
                 <span class="item-delete"><i class="fa fa-trash-o"></i></span>
-                <span class="item-value">Lorem ipsum dolor</span>
+                <span class="item-value">Lorem ipsum sample 1</span>
             </li>
             <li>
                 <span class="item-delete"><i class="fa fa-trash-o"></i></span>
-                <span class="item-value">Lorem ipsum dolor</span>
+                <span class="item-value">Lorem ipsum sample 2</span>
+            </li>
+            <li>
+                <span class="item-delete"><i class="fa fa-trash-o"></i></span>
+                <span class="item-value">Lorem ipsum sample 3</span>
+            </li>
+            <li>
+                <span class="item-delete"><i class="fa fa-trash-o"></i></span>
+                <span class="item-value">Lorem ipsum sample 4</span>
+            </li>
+            <li>
+                <span class="item-delete"><i class="fa fa-trash-o"></i></span>
+                <span class="item-value">Lorem ipsum sample 5</span>
+            </li>
+            <li>
+                <span class="item-delete"><i class="fa fa-trash-o"></i></span>
+                <span class="item-value">Lorem ipsum sample 6</span>
+            </li>
+            <li>
+                <span class="item-delete"><i class="fa fa-trash-o"></i></span>
+                <span class="item-value">Lorem ipsum sample 7</span>
+            </li>
+            <li>
+                <span class="item-delete"><i class="fa fa-trash-o"></i></span>
+                <span class="item-value">Lorem ipsum sample 8</span>
+            </li>
+            <li>
+                <span class="item-delete"><i class="fa fa-trash-o"></i></span>
+                <span class="item-value">Lorem ipsum sample 9</span>
+            </li>
+            <li>
+                <span class="item-delete"><i class="fa fa-trash-o"></i></span>
+                <span class="item-value">Lorem ipsum sample 10</span>
             </li>
         </ul>
 

@@ -1,4 +1,4 @@
-// let btnHideInput;
+let btnToggleInput;
 let inputNewTodoItem;
 let todoItemList;
 let wrapperItemDelete;
@@ -23,6 +23,7 @@ function init() {
     inputNewTodoItem = $("#new-todo-item");
     wrapperItemDelete = $("ul li .item-delete");
     wrapperItemValue = $("ul li .item-value");
+    btnToggleInput = $("#btn-toggle-input");
 
     /*
         Add event listeners using on method with special case of parent-child
@@ -38,8 +39,8 @@ function init() {
     });
 
     //  Delete Selected Item
-    todoItemList.on("click", ".item-delete", function (event) {
-        $(this).parent().fadeToggle(500, function () {
+    todoItemList.on("click", ".item-delete", function () {
+        $(this).parent().fadeToggle(400, function () {
             $(this).remove();
         });
     });
@@ -56,15 +57,39 @@ function init() {
             //  Reset value for the input element to empty string
             inputNewTodoItem.val("");
 
-            //  Insert new item at the end of the list
-            // todoItemList.append(generateNewTodoItem(newValue));
-            todoItemList.append("" +
-                "<li>" +
+            //  Create new item with the input value i.e. newValue
+            let newItem = "<li>" +
                 "<span class=\"item-delete\"><i class=\"fa fa-trash-o\"></i></span>" +
                 "<span class=\"item-value\">" + newValue + "</span>" +
-                "</li>");
+                "</li>";
+
+            //  Insert new item at the end of the list
+            // todoItemList.append(generateNewTodoItem(newValue));
+            $(newItem).hide().appendTo("ul").fadeIn(400);
+
         }
 
     })
+
+    btnToggleInput.on("click", function () {
+
+        let temp = $(this).find("i");
+        let label = $("label");//.previousSibling("label");
+
+        inputNewTodoItem.slideToggle(400);
+        label.slideToggle(1);
+
+        if (temp.hasClass("fa-angle-up")) {
+            temp.toggleClass("fa-angle-down");
+            temp.toggleClass("fa-angle-up");
+            return;
+        }
+
+        if (temp.hasClass("fa-angle-down")) {
+            temp.addClass("fa-angle-up");
+            temp.removeClass("fa-angle-down");
+        }
+
+    });
 
 }
